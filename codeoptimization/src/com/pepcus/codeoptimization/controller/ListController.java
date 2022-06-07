@@ -171,17 +171,22 @@ public class ListController {
     timeTaken = System.currentTimeMillis() - timeTaken;
     return timeTaken;
   }
-
+  
+  
+  /*
+   * *************** Sorting*********************
+   */
+  
   public long sortingArrayList() {
     timeTaken = System.currentTimeMillis();
-    Collections.sort(personArrayList);
+    Collections.sort(personArrayList, Collections.reverseOrder());
     timeTaken = System.currentTimeMillis() - timeTaken;
     return timeTaken;
   }
 
   public long sortingLinkedList() {
     timeTaken = System.currentTimeMillis();
-    Collections.sort(personLinkedList);
+    Collections.sort(personLinkedList, Collections.reverseOrder());
     timeTaken = System.currentTimeMillis() - timeTaken;
     return timeTaken;
   }

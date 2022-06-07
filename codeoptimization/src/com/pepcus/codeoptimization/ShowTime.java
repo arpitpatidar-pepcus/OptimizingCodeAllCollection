@@ -142,5 +142,20 @@ public class ShowTime {
     
     timeTaken = setController.sortHashSet();
     System.out.println(timeTaken + " ms. for sorting HashSet");
+    
+    timeTaken = setController.sortLinkedHashSet();
+    System.out.println(timeTaken + " ms. for sorting LinkedHashSet");
+    
+    timeTaken = setController.sortTreeSet();
+    System.out.println(timeTaken + " ms. for sorting TreeSet");
+    
+    timeTaken = mapController.sortingHashMap();
+    System.out.println(timeTaken + " ms. for sorting HashMap");
+    
+    timeTaken = mapController.sortingLinkedHashMap();
+    System.out.println(timeTaken + " ms. for sorting LinkedHashMap");
+    
+    timeTaken = mapController.sortingTreeMap();
+    System.out.println(timeTaken + " ms. for sorting TreeMaps");
  }
 }

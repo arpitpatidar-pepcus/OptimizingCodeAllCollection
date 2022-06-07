@@ -1,6 +1,6 @@
 package com.pepcus.codeoptimization.controller;
 
-import java.util.Collections;
+import java.util.Comparator;
 import java.util.Map;
 
 import com.pepcus.codeoptimization.dao.CsvToMap;
@@ -50,8 +50,6 @@ public class MapController {
     } else {
       System.out.println("key not available to update in LinkedHahsMap");
     }
-
-    // System.out.println(personLinkedHashMap.size());
     timeTaken = System.currentTimeMillis() - timeTaken;
     return timeTaken;
   }
@@ -72,14 +70,27 @@ public class MapController {
     } else {
       System.out.println("key not available to update in TreeMap");
     }
-    // System.out.println(personTreeMap.size());
+    timeTaken = System.currentTimeMillis() - timeTaken;
+    return timeTaken;
+  }
+
+  public long sortingHashMap() {
+    timeTaken = System.currentTimeMillis();
+    personHashMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
     timeTaken = System.currentTimeMillis() - timeTaken;
     return timeTaken;
   }
   
-  public long sortingHashSet() {
+  public long sortingLinkedHashMap() {
     timeTaken = System.currentTimeMillis();
-    Collections.sort(firstName);
+    personLinkedHashMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+    timeTaken = System.currentTimeMillis() - timeTaken;
+    return timeTaken;
+  }
+  
+  public long sortingTreeMap() {
+    timeTaken = System.currentTimeMillis();
+    personTreeMap.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()));
     timeTaken = System.currentTimeMillis() - timeTaken;
     return timeTaken;
   }

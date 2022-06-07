@@ -75,7 +75,7 @@ public class Person implements Comparable<Person> {
     long compareAadhar = ((Person) person).getAadharNumber();
 
     // For Ascending order
-    return (int)(this.aadharNumber - compareAadhar);
+    return (int)(this.aadharNumber - compareAadhar  );
 
     // For Descending order do like this
     // return compareage-this.studentage;
